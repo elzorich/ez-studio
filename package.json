@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/webstudio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.98.0",
+    "vite": "^6.0.0"
+  }
+}

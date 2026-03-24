@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EZ Studio — We design and build clean, modern websites for healthcare, wellness, and beauty businesses. SEO-friendly, mobile-first, and built to convert." />
+    <meta name="keywords" content="web design, healthcare websites, wellness websites, beauty salon websites, SEO, web development, responsive design" />
+    <meta property="og:title" content="EZ Studio — Websites for Healthcare & Wellness" />
+    <meta property="og:description" content="We build clean, modern, conversion-focused websites for healthcare, wellness, and beauty businesses." />
+    <meta property="og:type" content="website" />
+    <title>EZ Studio — Websites for Healthcare & Wellness</title>
+    <link rel="icon" href="/src/assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/styles/main.scss" />
+  </head>
+  <body>
+
+    <!-- ========== HEADER / NAVIGATION ========== -->
+    <header class="site-header" id="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <div class="container">
+          <a class="navbar-brand" href="#home" aria-label="EZ Studio — go to home">
+            <svg class="brand-bee-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <!-- Wings -->
+              <ellipse cx="7.5" cy="11" rx="6.5" ry="3" fill="#2aacac" opacity="0.55" transform="rotate(-22 7.5 11)"/>
+              <ellipse cx="20.5" cy="11" rx="6.5" ry="3" fill="#2aacac" opacity="0.55" transform="rotate(22 20.5 11)"/>
+              <!-- Abdomen -->
+              <ellipse cx="14" cy="19" rx="4.5" ry="6.5" fill="#1c8484"/>
+              <!-- Stripes -->
+              <rect x="9.8" y="16.5" width="8.4" height="1.8" rx="0.9" fill="#c4957a"/>
+              <rect x="9.8" y="20"   width="8.4" height="1.8" rx="0.9" fill="#c4957a"/>
+              <!-- Thorax -->
+              <circle cx="14" cy="12" r="4" fill="#2aacac"/>
+              <!-- Eyes -->
+              <circle cx="12.4" cy="11.2" r="1" fill="white"/>
+              <circle cx="15.6" cy="11.2" r="1" fill="white"/>
+              <!-- Antennae -->
+              <path d="M12 9 L9.5 5" stroke="#1c8484" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="9.2" cy="4.5" r="1.3" fill="#1c8484"/>
+              <path d="M16 9 L18.5 5" stroke="#1c8484" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="18.8" cy="4.5" r="1.3" fill="#1c8484"/>
+            </svg>
+            EZ Studio
+          </a>
+          <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-menu" id="nav-menu" role="list">
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#process" class="nav-link">Process</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link nav-link--cta">Get in touch</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- ========== HERO ========== -->
+      <section class="section hero" id="home" aria-label="Hero">
+        <div class="hero__visual" aria-hidden="true">
+          <img
+            class="hero__hands"
+            src="/hands-creation-v2.png"
+            alt="Two hands nearly touching — polygon wireframe art inspired by Michelangelo's Creation of Adam"
+            width="1024"
+            height="556"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <div class="container">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Web Design Studio</p>
+            <h1 class="hero__headline">
+              Beautiful websites for<br />
+              <span class="text-accent">healthcare &amp; wellness</span>
+            </h1>
+            <p class="hero__sub">
+              We help clinics, spas, physio practices, and beauty studios
+              attract more clients with clean, modern, and trustworthy websites.
+            </p>
+            <div class="hero__actions">
+              <a href="#contact" class="btn btn--primary">Start your project</a>
+              <a href="#portfolio" class="btn btn--ghost">See our work</a>
+            </div>
+            <div class="hero__trust">
+              <span>★★★★★</span>
+              <span>3 projects live — growing fast</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SERVICES ========== -->
+      <section class="section services" id="services" aria-label="Our Services">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-eyebrow">What we do</p>
+            <h2 class="section-title">Everything you need to grow online</h2>
+            <p class="section-sub">From the first design sketch to a live, search-optimised website — we handle it all so you can focus on your patients and clients.</p>
+          </div>
+          <div class="services__grid">
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M10 28h12M16 24v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <rect x="6" y="8" width="8" height="6" rx="1" fill="currentColor" opacity=".3"/>
+                  <rect x="18" y="8" width="8" height="2" rx="1" fill="currentColor" opacity=".3"/>
+                  <rect x="18" y="12" width="5" height="2" rx="1" fill="currentColor" opacity=".3"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Web Design</h3>
+              <p class="service-card__text">Custom, mobile-first designs that match your brand identity and build trust with patients and clients at first glance.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="8,20 13,15 17,19 24,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="2" y="2" width="28" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="8" cy="20" r="1.5" fill="currentColor"/>
+                  <circle cx="13" cy="15" r="1.5" fill="currentColor"/>
+                  <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+                  <circle cx="24" cy="12" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Development</h3>
+              <p class="service-card__text">Fast, semantic, and accessible code. We build clean websites that load quickly, score high on performance, and work on every device.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 16c0-3.9 3.1-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M16 9c3.9 0 7 3.1 7 7s-3.1 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="16" y1="3" x2="16" y2="29" stroke="currentColor" stroke-width="2"/>
+                  <line x1="3" y1="16" x2="29" y2="16" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">SEO</h3>
+              <p class="service-card__text">We optimise every page for search engines — from meta tags and structured data to page speed — so local clients find you first.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="3" width="16" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <rect x="19" y="9" width="10" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <line x1="8" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="8" y1="13" x2="18" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="8" y1="17" x2="14" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Responsive Design</h3>
+              <p class="service-card__text">Every website we build looks and works perfectly on phones, tablets, and desktops — because your clients are on every device.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.5 6.5l2.8 2.8M22.7 22.7l2.8 2.8M6.5 25.5l2.8-2.8M22.7 9.3l2.8-2.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Brand Identity</h3>
+              <p class="service-card__text">Logo refinement, colour palette, and typography system — we make sure your visual identity communicates calm, trust, and expertise.</p>
+            </article>
+            <article class="service-card">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 3C8.8 3 3 8.8 3 16s5.8 13 13 13 13-5.8 13-13S23.2 3 16 3z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 10v6l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="service-card__title">CMS &amp; Maintenance</h3>
+              <p class="service-card__text">Easy-to-use CMS setup (MODX, WordPress) and ongoing maintenance plans so your website stays fresh, secure, and up-to-date.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PORTFOLIO ========== -->
+      <section class="section portfolio" id="portfolio" aria-label="Portfolio">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-eyebrow">Our work</p>
+            <h2 class="section-title">Recent projects</h2>
+            <p class="section-sub">A selection of websites we have designed and developed for health and wellness businesses.</p>
+          </div>
+          <div class="portfolio__grid">
+            <a class="portfolio-card" data-category="healthcare" href="https://medicamente.cz" target="_blank" rel="noopener noreferrer">
+              <div class="portfolio-card__image portfolio-card__image--screenshot">
+                <img src="/preview-medicamente.jpg" alt="medicamente.cz website screenshot" loading="lazy" />
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Healthcare / Czech Republic</span>
+                <h3 class="portfolio-card__title">medicamente.cz</h3>
+                <p class="portfolio-card__text">Patient-focused medical information portal with a clean, accessible design optimised for search and trust.</p>
+              </div>
+            </a>
+            <a class="portfolio-card" data-category="healthcare" href="https://gynecomente.cz" target="_blank" rel="noopener noreferrer">
+              <div class="portfolio-card__image portfolio-card__image--screenshot">
+                <img src="/preview-gynecomente.jpg" alt="gynecomente.cz website screenshot" loading="lazy" />
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Gynaecology / Czech Republic</span>
+                <h3 class="portfolio-card__title">gynecomente.cz</h3>
+                <p class="portfolio-card__text">Specialist women's health clinic website with appointment request flow, doctor profiles, and local SEO.</p>
+              </div>
+            </a>
+            <a class="portfolio-card" data-category="wellness" href="https://zoryx.app" target="_blank" rel="noopener noreferrer">
+              <div class="portfolio-card__image portfolio-card__image--screenshot">
+                <img src="/preview-zoryx.jpg" alt="zoryx.app website screenshot" loading="lazy" />
+              </div>
+              <div class="portfolio-card__body">
+                <span class="portfolio-card__tag">Health App</span>
+                <h3 class="portfolio-card__title">zoryx.app</h3>
+                <p class="portfolio-card__text">Web application for a health-tech startup — modern UI, fast load times, and a seamless onboarding experience.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PROCESS ========== -->
+      <section class="section process" id="process" aria-label="Our Process">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-eyebrow">How we work</p>
+            <h2 class="section-title">From idea to live website in 4 steps</h2>
+          </div>
+          <ol class="process__steps" role="list">
+            <li class="process__step">
+              <div class="process__step-number" aria-hidden="true">01</div>
+              <div class="process__step-body">
+                <h3 class="process__step-title">Discovery</h3>
+                <p class="process__step-text">We listen, understand your goals and define the project scope together.</p>
+              </div>
+            </li>
+            <li class="process__step">
+              <div class="process__step-number" aria-hidden="true">02</div>
+              <div class="process__step-body">
+                <h3 class="process__step-title">Design</h3>
+                <p class="process__step-text">Wireframes, prototypes and visual design tailored to your brand identity.</p>
+              </div>
+            </li>
+            <li class="process__step">
+              <div class="process__step-number" aria-hidden="true">03</div>
+              <div class="process__step-body">
+                <h3 class="process__step-title">Develop</h3>
+                <p class="process__step-text">Clean, modern code built with the right stack for your needs.</p>
+              </div>
+            </li>
+            <li class="process__step">
+              <div class="process__step-number" aria-hidden="true">04</div>
+              <div class="process__step-body">
+                <h3 class="process__step-title">Launch &amp; Support</h3>
+                <p class="process__step-text">Testing, deployment and go-live with zero surprises — followed by ongoing maintenance, updates and performance monitoring.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ========== ABOUT ========== -->
+      <section class="section about" id="about" aria-label="About the Studio">
+        <img class="about__image" src="/vitruvian.png" aria-hidden="true"
+             alt="Vitruvian Man reimagined with geometric networks — art, mathematics, and human form as one"
+             loading="eager" />
+        <div class="container">
+          <div class="about__content">
+            <p class="section-eyebrow">About us</p>
+            <h2 class="section-title">Where craft meets technology</h2>
+            <p class="about__text">Just as Renaissance masters combined art, mathematics, and human vision to shape the world, we combine design, technology, and strategy to build digital experiences for healthcare and wellness.</p>
+            <p class="about__text">A small team — a core founding duo backed by trusted developers and specialists — crafting purposeful websites for clinics, spas, and health-tech products that deserve a web presence as refined as the care they provide.</p>
+            <ul class="about__values" role="list">
+              <li><span aria-hidden="true">✓</span> Mobile-first, always</li>
+              <li><span aria-hidden="true">✓</span> SEO from day one</li>
+              <li><span aria-hidden="true">✓</span> Clean code, no shortcuts</li>
+              <li><span aria-hidden="true">✓</span> Honest, transparent pricing</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT / CTA ========== -->
+      <section class="section contact" id="contact" aria-label="Contact">
+        <div class="container">
+          <div class="contact__grid">
+            <div class="contact__info">
+              <p class="section-eyebrow">Get in touch</p>
+              <h2 class="section-title">Let's build something great together</h2>
+              <p class="contact__sub">Tell us about your project and we'll get back to you within 24 hours. No commitment required.</p>
+              <ul class="contact__details" role="list">
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.5 6.667l7.5 5 7.5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="1.5" y="3.5" width="17" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+                  <a href="mailto:hello@ez-webstudio.com">hello@ez-webstudio.com</a>
+                </li>
+                <li>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 012-2h1.5a1 1 0 01.98.8l.7 3.5a1 1 0 01-.57 1.08l-1.3.65a11 11 0 005.14 5.14l.65-1.3a1 1 0 011.08-.57l3.5.7a1 1 0 01.8.98V15a2 2 0 01-2 2C7.16 17 3 12.84 3 7V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  <a href="tel:+1234567890">+1 234 567 890</a>
+                </li>
+              </ul>
+            </div>
+            <form class="contact__form" id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-group">
+                <label class="form-label" for="name">Your name</label>
+                <input class="form-input" type="text" id="name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+                <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email address</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="jane@yourpractice.com" autocomplete="email" required />
+                <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="business">Type of business</label>
+                <select class="form-input form-select" id="business" name="business">
+                  <option value="">Select your industry...</option>
+                  <option value="healthcare">Healthcare / Clinic</option>
+                  <option value="physio">Physiotherapy</option>
+                  <option value="beauty">Beauty / Spa</option>
+                  <option value="wellness">Wellness / Coaching</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Tell us about your project</label>
+                <textarea class="form-input form-textarea" id="message" name="message" placeholder="What do you need? What do you like? What's the timeline?" rows="4" required></textarea>
+                <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+              </div>
+              <button class="btn btn--primary btn--full" type="submit">
+                Send message
+              </button>
+              <p class="form-privacy">We'll never share your details. <a href="#">Privacy policy</a>.</p>
+              <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+                <strong>Message sent!</strong> We'll be in touch within 24 hours.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a class="navbar-brand" href="#home" aria-label="EZ Studio — go to home">
+              <svg class="brand-bee-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="7.5" cy="11" rx="6.5" ry="3" fill="#2aacac" opacity="0.55" transform="rotate(-22 7.5 11)"/>
+                <ellipse cx="20.5" cy="11" rx="6.5" ry="3" fill="#2aacac" opacity="0.55" transform="rotate(22 20.5 11)"/>
+                <ellipse cx="14" cy="19" rx="4.5" ry="6.5" fill="#1c8484"/>
+                <rect x="9.8" y="16.5" width="8.4" height="1.8" rx="0.9" fill="#c4957a"/>
+                <rect x="9.8" y="20"   width="8.4" height="1.8" rx="0.9" fill="#c4957a"/>
+                <circle cx="14" cy="12" r="4" fill="#2aacac"/>
+                <circle cx="12.4" cy="11.2" r="1" fill="white"/>
+                <circle cx="15.6" cy="11.2" r="1" fill="white"/>
+                <path d="M12 9 L9.5 5" stroke="#1c8484" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="9.2" cy="4.5" r="1.3" fill="#1c8484"/>
+                <path d="M16 9 L18.5 5" stroke="#1c8484" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="18.8" cy="4.5" r="1.3" fill="#1c8484"/>
+              </svg>
+              EZ Studio
+            </a>
+            <p class="footer__tagline">Websites for healthcare &amp; wellness professionals.</p>
+          </div>
+          <nav class="footer__nav" aria-label="Footer navigation">
+            <h3 class="footer__nav-title">Navigation</h3>
+            <ul role="list">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="footer__contact">
+            <h3 class="footer__nav-title">Contact</h3>
+            <ul role="list">
+              <li><a href="mailto:hello@ez-webstudio.com">hello@ez-webstudio.com</a></li>
+              <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copy">© <span id="year"></span> EZ Studio. All rights reserved.</p>
+          <ul class="footer__legal" role="list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

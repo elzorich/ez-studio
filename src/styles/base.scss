@@ -1,0 +1,141 @@
+// =============================================================================
+// BASE — CSS custom properties, resets, and typography
+// =============================================================================
+
+// ── Brand colour palette ─────────────────────────────────────────────────────
+:root {
+  // Primary — aqua turquoise (trust + health + calm)
+  --color-primary:        #2aacac;
+  --color-primary-light:  #3dc8c8;
+  --color-primary-dark:   #1c8484;
+  --color-primary-tint:   #eaf8f8;
+
+  // Accent — warm sand / blush (elegance + beauty)
+  --color-accent:         #c4957a;
+  --color-accent-light:   #d8b09a;
+  --color-accent-tint:    #fdf4ef;
+
+  // Neutrals
+  --color-white:          #ffffff;
+  --color-bg:             #f8fcfc;
+  --color-bg-alt:         #f0fafa;
+  --color-surface:        #ffffff;
+  --color-border:         #d8eeee;
+  --color-border-light:   #ecf7f7;
+
+  // Text
+  --color-text:           #122828;
+  --color-text-muted:     #4a6e6e;
+  --color-text-light:     #80a0a0;
+
+  // Typography
+  --font-heading:  'Playfair Display', Georgia, serif;
+  --font-body:     'Inter', system-ui, sans-serif;
+
+  // Sizing scale
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  // Radii
+  --radius-sm:   0.25rem;
+  --radius:      0.5rem;
+  --radius-md:   0.75rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-full: 9999px;
+
+  // Shadows
+  --shadow-sm:  0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.04);
+  --shadow:     0 4px 12px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.05);
+  --shadow-md:  0 8px 24px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.06);
+  --shadow-lg:  0 16px 48px rgba(0,0,0,.12);
+
+  // Transitions
+  --transition: 200ms ease;
+  --transition-slow: 400ms ease;
+
+  // Layout
+  --container-max: 1200px;
+  --container-pad: var(--space-6);
+  --nav-height: 4rem;
+}
+
+// ── Reset ────────────────────────────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+  &:hover { color: var(--color-primary-dark); }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+// ── Typography scale ─────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.375rem); }
+
+p { max-width: 68ch; }
+
+// ── Focus ring ───────────────────────────────────────────────────────────────
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
