@@ -332,13 +332,16 @@
                 <textarea class="form-input form-textarea" id="message" name="message" placeholder="What do you need? What do you like? What's the timeline?" rows="4" required></textarea>
                 <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
               </div>
+              <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+                <strong>Message sent!</strong> We'll be in touch within 24 hours.
+              </div>
+              <div class="form-error-global" id="form-failure" role="alert" aria-live="assertive" hidden>
+                <strong>Something went wrong.</strong> Please try again or email us directly at <a href="mailto:hello@zorich.studio">hello@zorich.studio</a>.
+              </div>
               <button class="btn btn--primary btn--full" type="submit">
                 Send message
               </button>
               <p class="form-privacy">We'll never share your details. <a href="#">Privacy policy</a>.</p>
-              <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
-                <strong>Message sent!</strong> We'll be in touch within 24 hours.
-              </div>
             </form>
           </div>
         </div>

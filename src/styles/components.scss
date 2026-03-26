@@ -245,3 +245,17 @@
   color: var(--color-primary-dark);
   font-size: 0.9375rem;
 }
+
+.form-error-global {
+  padding: var(--space-4);
+  background-color: #fff5f5;
+  border: 1px solid #e05c5c;
+  border-radius: var(--radius);
+  color: #b91c1c;
+  font-size: 0.9375rem;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

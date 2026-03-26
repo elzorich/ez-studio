@@ -83,6 +83,7 @@ function initSmoothScroll() {
 function initContactForm() {
   const form    = document.getElementById('contact-form');
   const success = document.getElementById('form-success');
+  const failure = document.getElementById('form-failure');
   if (!form) return;
 
   function showError(input, errorId, msg) {
@@ -95,6 +96,17 @@ function initContactForm() {
     const el = document.getElementById(errorId);
     if (el) el.textContent = '';
     input.classList.remove('is-invalid');
+  }
+
+  function showMessage(el) {
+    if (!el) return;
+    el.hidden = false;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function hideMessages() {
+    if (success) success.hidden = true;
+    if (failure) failure.hidden = true;
   }
 
   // Live validation on blur
@@ -119,32 +131,42 @@ function initContactForm() {
     return true;
   }
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    hideMessages();
+
     const requiredFields = form.querySelectorAll('[required]');
     let valid = true;
-
-    requiredFields.forEach(input => {
-      if (!validateField(input)) valid = false;
-    });
-
+    requiredFields.forEach(input => { if (!validateField(input)) valid = false; });
     if (!valid) return;
 
-    // Simulate form submission (replace with real API call / Formspree / etc.)
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Sending…';
 
-    setTimeout(() => {
-      form.reset();
+    try {
+      // NOTE: replace the URL below with your real endpoint (Formspree, MODx API, etc.)
+      // Until then this will always fall into the catch block in production.
+      const formData = new FormData(form);
+      const response = await fetch(form.action || window.location.href, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' },
+      });
+
+      if (response.ok) {
+        form.reset();
+        showMessage(success);
+      } else {
+        showMessage(failure);
+      }
+    } catch {
+      // Network error or no endpoint configured
+      showMessage(failure);
+    } finally {
       btn.disabled = false;
       btn.textContent = 'Send message';
-      if (success) {
-        success.hidden = false;
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        setTimeout(() => { success.hidden = true; }, 6000);
-      }
-    }, 900);
+    }
   });
 }
 

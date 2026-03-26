@@ -1,5 +1,6 @@
 [[!FormIt?
-  &hooks=`email`
+  &hooks=`spam,email`
+  &spamEmailFields=`email`
   &emailTo=`hello@zorich.studio`
   &emailFrom=`hello@zorich.studio`
   &emailFromName=`Zorich Studio Website`
@@ -7,9 +8,11 @@
   &emailReplyToName=`[[!+fi.name]]`
   &emailSubject=`New enquiry from Zorich Studio website`
   &emailTpl=`ezs-email-tpl`
-  &validate=`name:required,email:required:email,message:required`
+  &validate=`nospam:blank,name:required:maxLength=^100^,email:required:email:maxLength=^200^,message:required:maxLength=^3000^`
+  &sanitize=`1`
+  &nospam=`1`
   &validationErrorMessage=`Please fill in all required fields correctly.`
-  &successMessage=`<div class="form-success" role="status"><strong>Message sent!</strong> We'll be in touch within 24 hours.</div>`
+  &successMessage=`<div class="form-success" role="status" aria-live="polite"><strong>Message sent!</strong> We'll be in touch within 24 hours.</div>`
 ]]
 
 <section class="section contact" id="contact" aria-label="Contact">
@@ -26,22 +29,25 @@
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 012-2h1.5a1 1 0 01.98.8l.7 3.5a1 1 0 01-.57 1.08l-1.3.65a11 11 0 005.14 5.14l.65-1.3a1 1 0 011.08-.57l3.5.7a1 1 0 01.8.98V15a2 2 0 01-2 2C7.16 17 3 12.84 3 7V5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            <a href="tel:+420 776 540 503">+420 776 540 503</a>
+            <a href="tel:+420776540503">+420 776 540 503</a>
           </li>
         </ul>
       </div>
       <div class="contact__form-wrapper">
+
         [[!+fi.successMessage]]
+
+        [[!+fi.successMessage:empty=`
         <form class="contact__form" id="contact-form" action="[[~[[*id]]]]" method="post" novalidate aria-label="Contact form">
-          <input type="hidden" name="nospam" value="" />
+          <input type="text" name="nospam" value="" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="form-group">
             <label class="form-label" for="name">Your name</label>
-            <input class="form-input[[!+fi.error.name:notempty=` is-invalid`]]" type="text" id="name" name="name" value="[[!+fi.name]]" placeholder="Jane Smith" autocomplete="name" required />
+            <input class="form-input[[!+fi.error.name:notempty=` is-invalid`]]" type="text" id="name" name="name" value="[[!+fi.name]]" placeholder="Jane Smith" autocomplete="name" required maxlength="100" />
             <span class="form-error" id="name-error" role="alert" aria-live="polite">[[!+fi.error.name]]</span>
           </div>
           <div class="form-group">
             <label class="form-label" for="email">Email address</label>
-            <input class="form-input[[!+fi.error.email:notempty=` is-invalid`]]" type="email" id="email" name="email" value="[[!+fi.email]]" placeholder="jane@yourpractice.com" autocomplete="email" required />
+            <input class="form-input[[!+fi.error.email:notempty=` is-invalid`]]" type="email" id="email" name="email" value="[[!+fi.email]]" placeholder="jane@yourpractice.com" autocomplete="email" required maxlength="200" />
             <span class="form-error" id="email-error" role="alert" aria-live="polite">[[!+fi.error.email]]</span>
           </div>
           <div class="form-group">
@@ -57,14 +63,18 @@
           </div>
           <div class="form-group">
             <label class="form-label" for="message">Tell us about your project</label>
-            <textarea class="form-input form-textarea[[!+fi.error.message:notempty=` is-invalid`]]" id="message" name="message" placeholder="What do you need? What do you like? What's the timeline?" rows="4" required>[[!+fi.message]]</textarea>
+            <textarea class="form-input form-textarea[[!+fi.error.message:notempty=` is-invalid`]]" id="message" name="message" placeholder="What do you need? What do you like? What's the timeline?" rows="4" required maxlength="3000">[[!+fi.message]]</textarea>
             <span class="form-error" id="message-error" role="alert" aria-live="polite">[[!+fi.error.message]]</span>
           </div>
+          [[!+fi.validation_error_message:notempty=`<div class="form-error-global" role="alert" aria-live="assertive"><strong>Please check the form:</strong> [[!+fi.validation_error_message]]</div>`]]
+          [[!+fi.name:notempty=`[[!+fi.validation_error_message:empty=`<div class="form-error-global" role="alert" aria-live="assertive"><strong>Something went wrong.</strong> Please try again or email us directly at <a href="mailto:hello@zorich.studio">hello@zorich.studio</a>.</div>`]]`]]
           <button class="btn btn--primary btn--full" type="submit">
             Send message
           </button>
           <p class="form-privacy">We'll never share your details. <a href="#">Privacy policy</a>.</p>
         </form>
+        `]]
+
       </div>
     </div>
   </div>

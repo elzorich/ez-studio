@@ -3,19 +3,19 @@
 <table cellpadding="8" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; color: #333;">
   <tr>
     <td style="font-weight: bold; width: 140px;">Name:</td>
-    <td>[[+name]]</td>
+    <td>[[+name:stripTags]]</td>
   </tr>
   <tr>
     <td style="font-weight: bold;">Email:</td>
-    <td><a href="mailto:[[+email]]">[[+email]]</a></td>
+    <td><a href="mailto:[[+email:stripTags]]">[[+email:stripTags]]</a></td>
   </tr>
   <tr>
     <td style="font-weight: bold;">Business type:</td>
-    <td>[[+business:default=`Not specified`]]</td>
+    <td>[[+business:stripTags:default=`Not specified`]]</td>
   </tr>
   <tr>
     <td style="font-weight: bold; vertical-align: top;">Message:</td>
-    <td style="white-space: pre-wrap;">[[+message]]</td>
+    <td style="white-space: pre-wrap;">[[+message:stripTags]]</td>
   </tr>
 </table>
 
