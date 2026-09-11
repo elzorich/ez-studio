@@ -1,8 +1,8 @@
-name: Deploy to Firebase Hosting on merge
+name: Deploy to Firebase Hosting (live)
 on:
   push:
     branches:
-      - main
+      - redesign/react-migration
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
