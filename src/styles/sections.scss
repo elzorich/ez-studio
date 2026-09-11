@@ -157,6 +157,14 @@
     line-height: 1.6;
     max-width: none;
   }
+
+  &__link {
+    display: inline-block;
+    margin-top: var(--space-4);
+    color: var(--color-primary-dark);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
 }
 
 // ── Portfolio ─────────────────────────────────────────────────────────────────
