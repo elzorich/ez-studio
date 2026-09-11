@@ -1,5 +1,5 @@
 [[!FormIt?
-  &hooks=`spam,email`
+  &hooks=`ezsAntiSpam`
   &spamEmailFields=`email`
   &emailTo=`hello@zorich.studio`
   &emailFrom=`hello@zorich.studio`
@@ -8,9 +8,8 @@
   &emailReplyToName=`[[!+fi.name]]`
   &emailSubject=`New enquiry from Zorich Studio website`
   &emailTpl=`ezs-email-tpl`
-  &validate=`nospam:blank,name:required:maxLength=^100^,email:required:email:maxLength=^200^,message:required:maxLength=^3000^`
+  &validate=`website_url:blank,name:required:maxLength=^100^,email:required:email:maxLength=^200^,business:required,message:required:maxLength=^3000^`
   &sanitize=`1`
-  &nospam=`1`
   &validationErrorMessage=`Please fill in all required fields correctly.`
   &successMessage=`<div class="form-success" role="status" aria-live="polite"><strong>Message sent!</strong> We'll be in touch within 24 hours.</div>`
 ]]
@@ -39,7 +38,14 @@
 
         [[!+fi.successMessage:empty=`
         <form class="contact__form" id="contact-form" action="[[~[[*id]]]]" method="post" novalidate aria-label="Contact form">
-          <input type="text" name="nospam" value="" style="display:none" tabindex="-1" autocomplete="off" />
+        <input
+          type="text"
+          name="website_url"
+          value=""
+          style="display:none"
+          tabindex="-1"
+          autocomplete="off"
+        />
           <div class="form-group">
             <label class="form-label" for="name">Your name</label>
             <input class="form-input[[!+fi.error.name:notempty=` is-invalid`]]" type="text" id="name" name="name" value="[[!+fi.name]]" placeholder="Jane Smith" autocomplete="name" required maxlength="100" />

@@ -1,4 +1,4 @@
-# EZ Studio — Web Studio Landing Page
+# Zorich Studio — Landing Page
 
 A clean, modern, SEO-friendly landing page for a web studio that specialises in websites for **healthcare, wellness, and beauty businesses**.
 
@@ -22,8 +22,10 @@ Built with plain **HTML + SCSS + vanilla JavaScript**, using **Vite** as the dev
 ## Project structure
 
 ```
-artifacts/webstudio/
-├── index.html               # Main entry point (all sections live here)
+.
+├── index.html               # Local Vite preview of the full page
+├── modx/                    # Ready-to-paste MODX template, chunks, and resource content
+├── public/                  # Static images copied into the Vite build
 ├── src/
 │   ├── styles/
 │   │   ├── main.scss        # Entry: imports all partials
@@ -34,7 +36,6 @@ artifacts/webstudio/
 │   ├── js/
 │   │   └── main.js          # Vanilla JS (nav, scroll, form validation, animations)
 │   └── assets/
-│       ├── images/          # Place your project images here
 │       └── icons/
 │           └── favicon.svg
 ├── package.json
@@ -51,8 +52,7 @@ artifacts/webstudio/
 Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) v18 or later (`node --version`)
-- [pnpm](https://pnpm.io/installation) v8 or later (`pnpm --version`)
-  - Install pnpm: `npm install -g pnpm`
+- npm, which ships with Node.js (`npm --version`)
 - [Git](https://git-scm.com/) (`git --version`)
 
 ### Step-by-step setup
@@ -66,17 +66,14 @@ cd webstudio
 
 **2. Install dependencies**
 
-The landing page lives in `artifacts/webstudio/`. Install its dependencies:
-
 ```bash
-cd artifacts/webstudio
-pnpm install
+npm install
 ```
 
 **3. Start the development server**
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Vite will start a local server. Open your browser at:
@@ -115,15 +112,15 @@ Key files to edit:
 ### Build for production
 
 ```bash
-pnpm build
+npm run build
 ```
 
-Output goes to `dist/public/`. The result is pure static HTML/CSS/JS — deploy it to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, your own server).
+Output goes to `dist/`. For MODX, upload `dist/assets/main.css`, `dist/assets/main.js`, and the required images from `public/` as described in `modx/README.md`.
 
 ### Preview the production build locally
 
 ```bash
-pnpm serve
+npm run preview
 ```
 
 Then open `http://localhost:5173`.
@@ -151,27 +148,19 @@ Open `src/styles/base.scss` and update the CSS custom properties at the top:
 
 ### 2. Change the studio name and content
 
-Edit `index.html` directly. Search for `EZ Studio` and replace with the client's name. Update all section text, contact details, and meta tags.
+Edit `index.html` for the local preview and the matching files in `modx/` for the live MODX site. Keep both aligned when changing section text, contact details, and meta tags.
 
 ### 3. Add real images
 
-Place images in `src/assets/images/` and reference them in `index.html`:
+Place static images in `public/` and reference them from the site root in `index.html`:
 
 ```html
-<img src="/src/assets/images/hero.jpg" alt="Descriptive alt text" width="800" height="600" />
+<img src="/hero.jpg" alt="Descriptive alt text" width="800" height="600" />
 ```
 
 ### 4. Connect the contact form
 
-The form currently simulates a submission. To make it real, replace the `setTimeout` block in `src/js/main.js` with a `fetch()` call to your backend or a service like [Formspree](https://formspree.io/):
-
-```js
-const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData),
-});
-```
+The local preview uses JavaScript validation in `src/js/main.js`. The live MODX version uses FormIt in `modx/chunk--ezs-contact.html`; see `modx/README.md` for setup details.
 
 ---
 
@@ -183,7 +172,7 @@ const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
 | **SCSS** | Modular styles with CSS custom properties |
 | **Vanilla JavaScript** (ES2022) | Nav, animations, form validation |
 | **Vite** | Dev server, SCSS compilation, production build |
-| **pnpm** | Package management |
+| **npm** | Package management |
 
 ---
 
