@@ -2,7 +2,7 @@ name: Deploy to Firebase Hosting (live)
 on:
   push:
     branches:
-      - redesign/react-migration
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
