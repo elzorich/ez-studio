@@ -1,5 +1,5 @@
 {
-  "include": ["vite.config.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"],
   "exclude": ["node_modules", "build", "dist"],
   "compilerOptions": {
     "target": "es2022",
@@ -10,8 +10,9 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "strictNullChecks": true,
+    "strict": true,
     "noImplicitAny": true,
-    "types": ["node", "vite/client"]
+    "jsx": "react-jsx",
+    "types": ["vite/client"]
   }
 }

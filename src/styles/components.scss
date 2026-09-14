@@ -102,6 +102,18 @@
   flex-shrink: 0;
 }
 
+.brand-mark {
+  width: 2rem;
+  height: 2rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -235,6 +247,23 @@
   font-size: 0.8125rem;
   color: var(--color-text-light);
   text-align: center;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+}
+
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+
+  input { margin-top: 0.3rem; accent-color: var(--color-primary); }
 }
 
 .form-success {

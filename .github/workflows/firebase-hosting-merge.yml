@@ -2,7 +2,7 @@ name: Deploy to Firebase Hosting (live)
 on:
   push:
     branches:
-      - redesign/react-migration
+      - main
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -14,6 +14,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+        env:
+          VITE_FORMSPREE_FORM_ID: ${{ secrets.VITE_FORMSPREE_FORM_ID }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}

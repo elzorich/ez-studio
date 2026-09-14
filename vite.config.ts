@@ -1,9 +1,13 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+
+declare const process: { env: Record<string, string | undefined> };
 
 const port = process.env.PORT ? Number(process.env.PORT) : 5173;
 const base = process.env.BASE_PATH ?? "/";
 
 export default defineConfig({
+  plugins: [react()],
   base,
   css: {
     preprocessorOptions: {
